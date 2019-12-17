@@ -115,4 +115,30 @@
       <option name="XML" value="false" />
     </context>
   </template>
+  <template name="thpool" value=" ExecutorService threadPool = new ThreadPoolExecutor(&#10;              2,&#10;              5,&#10;              1L,&#10;              TimeUnit.SECONDS,&#10;              new LinkedBlockingQueue&lt;Runnable&gt;(3),&#10;              Executors.defaultThreadFactory(),&#10;             // new ThreadPoolExecutor.CallerRunsPolicy(),&#10;             /*CallerRunsPolicy：“调用者运行”一种调节机制，该策略既不会抛弃任务，也不&#10;              会抛出异常，而是将某些任务回退到调用者，从而降低新任务的流量。*/&#10;             // new ThreadPoolExecutor.DiscardOldestPolicy();&#10;             /* 抛弃队列中等待最久的任务，然后把当前任务加人队列中&#10;              尝试再次提交当前任务*/&#10;              //new ThreadPoolExecutor.DiscardPolicy();&#10;              /*该策略默默地丢弃无法处理的任务，不予任何处理也不抛出异常。&#10;              如果允许任务丢失，这是最好的一种策略。*/&#10;              new ThreadPoolExecutor.AbortPolicy());&#10;            //直接抛出RejectedExecutionException异常阻止系统正常运行&#10;" description="创建线程池" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="ACTION_SCRIPT" value="false" />
+      <option name="ASPECTJ" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="ColdFusion" value="false" />
+      <option name="ECMAScript6" value="false" />
+      <option name="GROOVY" value="false" />
+      <option name="GSP" value="false" />
+      <option name="HAML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="JSP" value="false" />
+      <option name="KOTLIN" value="false" />
+      <option name="MXML" value="false" />
+      <option name="OGNL" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="REQUEST" value="false" />
+      <option name="SQL" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
 </templateSet>
