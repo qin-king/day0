@@ -1,0 +1,11 @@
+<application>
+  <component name="GithubAccounts">
+    <account id="931281a8-532a-49ad-95ea-eea23c37e2f1" name="qin-king">
+      <server host="github.com" />
+    </account>
+  </component>
+  <component name="GithubSettings">
+    <option name="LOGIN" value="qin-king" />
+    <option name="AUTH_TYPE" value="BASIC" />
+  </component>
+</application>

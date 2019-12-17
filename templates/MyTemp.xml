@@ -1,0 +1,118 @@
+<templateSet group="MyTemp">
+  <template name="nTd" value="new Thread(new Runnable() {&#10;    @Override&#10;    public void run() {&#10;        //需要执行的操作&#10;    }&#10;},&quot;线程名&quot;).start();" description="创建线程" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name="addlock" value="lock.lock();&#10;try{&#10;   //需要执行的操作&#10;}catch(Exception e){&#10;    e.printStackTrace();&#10;&#10;}finally {&#10;    lock.unlock();&#10;}" description="add Lock and try" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+      <option name="MAVEN" value="true" />
+      <option name="SQL" value="true" />
+    </context>
+  </template>
+  <template name="dich" value=" int index = -1;&#10;&#9;&#9;int left = 0;&#10;        int right = arr.length-1;&#10;        int mide = (left + right)/2;&#10;        &#10;        while(left&lt;=right){&#10;            if(arr[mid] == value){//如果是基本数据类型，可以使用==比较，如果是引用数据类型，改成equals比较&#10;                index = i;&#10;                break;&#10;            }else if(value &gt; arr[mid]){&#10;                //往右边查找，修改left&#10;                left = mid + 1;&#10;            }else{&#10;                //往左边查找，修改right&#10;                right = mid - 1;&#10;            }&#10;            mid = (left + right)/2;&#10;        }&#10;&#9;}&#10;    if(index==-1){&#10;    &#9;System.out.println(&quot;没找到&quot;);&#10;    }else{&#10;        System.out.println(&quot;下标是：&quot; + index);&#10;    }" description="二分查找法" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="ACTION_SCRIPT" value="false" />
+      <option name="ASPECTJ" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="ColdFusion" value="false" />
+      <option name="ECMAScript6" value="false" />
+      <option name="GROOVY" value="false" />
+      <option name="GSP" value="false" />
+      <option name="HAML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="JSP" value="false" />
+      <option name="KOTLIN" value="false" />
+      <option name="MXML" value="false" />
+      <option name="OGNL" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="REQUEST" value="false" />
+      <option name="SQL" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
+  <template name="bub" value="int[] arr = {5,4,6,3,1};&#10;&#9;&#9;&#10;//冒泡排序，是要经过很多轮，外循环控制轮数 = 元素的个数 - 1&#10;//每一轮是经过多次，每一次是相邻元素的比较&#10;for(int i=1; i&lt;arr.length; i++){&#10;    //从左到右，每一轮的起点arr[0]&#10;    /*&#10;    当i=1,j=0,1,2,3&#9;&#9;j&lt;arr.length-i&#10;    当i=2,j=0,1,2&#10;    ...&#10;    */&#10;    for(int j=0; j&lt;arr.length-i; j++){&#10;        //相邻元素比较    arr[j]与arr[j+1]   arr[j-1]（当j=0，越界）与arr[j]&#10;        //从小到大  ==&gt; 前面的元素 &gt; 后面的元素，交换&#10;        if(arr[j] &gt; arr[j+1]){&#10;            int temp = arr[j];&#10;            arr[j] = arr[j+1];&#10;            arr[j+1] = temp;&#10;        }&#10;    }&#10;}&#10;" description="冒泡排序" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="ACTION_SCRIPT" value="false" />
+      <option name="ASPECTJ" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="ColdFusion" value="false" />
+      <option name="ECMAScript6" value="false" />
+      <option name="GROOVY" value="false" />
+      <option name="GSP" value="false" />
+      <option name="HAML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="JSP" value="false" />
+      <option name="KOTLIN" value="false" />
+      <option name="MXML" value="false" />
+      <option name="OGNL" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="REQUEST" value="false" />
+      <option name="SQL" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
+  <template name="ll" value="List list = new ArrayList();&#10;list=##;&#10;for (Object object : list) {&#10;&#9;&#9;System.out.println(&quot;%%%&quot;+object);&#10;&#9;}" description="new List 并遍历" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="ACTION_SCRIPT" value="false" />
+      <option name="ASPECTJ" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="ColdFusion" value="false" />
+      <option name="ECMAScript6" value="false" />
+      <option name="GROOVY" value="false" />
+      <option name="GSP" value="false" />
+      <option name="HAML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="JSP" value="false" />
+      <option name="KOTLIN" value="false" />
+      <option name="MXML" value="false" />
+      <option name="OGNL" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="REQUEST" value="false" />
+      <option name="SQL" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
+  <template name="stc" value="System.out.println(Thread.currentThread().getName()+&quot;\t&quot; + number);" description="打印并发线程名" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="ACTION_SCRIPT" value="false" />
+      <option name="ASPECTJ" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="ColdFusion" value="false" />
+      <option name="ECMAScript6" value="false" />
+      <option name="GROOVY" value="false" />
+      <option name="GSP" value="false" />
+      <option name="HAML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="JSP" value="false" />
+      <option name="KOTLIN" value="false" />
+      <option name="MXML" value="false" />
+      <option name="OGNL" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="REQUEST" value="false" />
+      <option name="SQL" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
+</templateSet>
