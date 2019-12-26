@@ -141,4 +141,31 @@
       <option name="XML" value="false" />
     </context>
   </template>
+  <template name="JMS" value=" public static final String MQ_URL=&quot;tcp://192.168.140.222:61616&quot;;&#10;    public static final String QUEUE_NAME =&quot;queue01&quot;;&#10;    public static void main(String[] args) throws JMSException {&#10;        //1 获得ActiveMQConnectionFactory&#10;        ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory(MQ_URL);&#10;        //2 由ActiveMQConnectionFactory获得Connection&#10;        Connection connection = activeMQConnectionFactory.createConnection();&#10;        //3 启动连接准备建立会话&#10;        connection.start();&#10;        //4 获得Session，两个参数先用默认&#10;        Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);&#10;        //4.1 是否开启事务&#10;        //4.2 签收模式&#10;        //5 获得目的地，此例是队列&#10;        Queue queue = session.createQueue(QUEUE_NAME);&#10;        //6 获得消息生产者,生产什么内容？生产出来放在哪里？&#10;        MessageConsumer messageConsumer = session.createConsumer(queue);&#10;        //7 生产message内容&#10;         /*&#10;        异步非阻塞方式(监听器onMessage())&#10;        订阅者或接收者通过MessageConsumer的setMessageListener(MessageListener listener)注册一个消息监听器，&#10;        当消息到达之后，系统自动调用监听器MessageListener的onMessage(Message message)方法。*/&#10;         messageConsumer.setMessageListener((message) -&gt; {&#10;             if (null != message &amp;&amp; message instanceof TextMessage) {&#10;                 TextMessage textMessage = (TextMessage)message;&#10;                 try {&#10;                     System.out.println(&quot;***接受到消息： &quot;+textMessage.getText());&#10;                 } catch (Exception e) {&#10;                     e.printStackTrace();&#10;                 }&#10;             }&#10;         });&#10;&#10;        //8 释放各种连接和资源&#10;        messageConsumer.close();&#10;        session.close();&#10;        connection.close();&#10;&#10;    }" description="JMS Consume 异步非阻塞方式(监听器onMessage())" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="ACTION_SCRIPT" value="false" />
+      <option name="ASPECTJ" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="ColdFusion" value="false" />
+      <option name="ECMAScript6" value="false" />
+      <option name="GROOVY" value="false" />
+      <option name="GSP" value="false" />
+      <option name="HAML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_CODE" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="JSP" value="false" />
+      <option name="KOTLIN" value="false" />
+      <option name="MXML" value="false" />
+      <option name="OGNL" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="REQUEST" value="false" />
+      <option name="SQL" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
 </templateSet>
